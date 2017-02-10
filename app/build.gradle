@@ -203,6 +203,3 @@ dependencies {
     })
     androidTestScreengrabCompile "tools.fastlane:screengrab:$libraryVersion.screengrab"
 }
-
-// Must be at the bottom
-apply plugin: 'com.google.gms.google-services'

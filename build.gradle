@@ -30,7 +30,6 @@ buildscript {
         classpath 'org.ajoberstar:grgit:1.8.0'
         classpath 'com.dicedmelon.gradle:jacoco-android:0.1.1'
         classpath 'com.getkeepsafe.dexcount:dexcount-gradle-plugin:0.6.2'
-        classpath 'com.google.gms:google-services:3.0.0'
     }
 
     configurations.classpath.exclude group: 'com.android.tools.external.lombok'
