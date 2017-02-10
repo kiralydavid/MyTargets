@@ -21,8 +21,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.AppCompatDelegate;
 import android.view.MenuItem;
 
-import com.google.firebase.analytics.FirebaseAnalytics;
-
 import de.dreier.mytargets.R;
 import de.dreier.mytargets.utils.Utils;
 
@@ -35,11 +33,6 @@ public abstract class ChildActivityBase extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        logEvent(getClass().getSimpleName());
-    }
-
-    protected void logEvent(String event) {
-        FirebaseAnalytics.getInstance(this).logEvent(event, null);
     }
 
     @Override
