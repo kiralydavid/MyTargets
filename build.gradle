@@ -31,7 +31,6 @@ buildscript {
         classpath 'com.dicedmelon.gradle:jacoco-android:0.1.1'
         classpath 'com.getkeepsafe.dexcount:dexcount-gradle-plugin:0.6.2'
         classpath 'com.google.gms:google-services:3.0.0'
-        classpath 'com.google.firebase:firebase-plugins:1.0.4'
     }
 
     configurations.classpath.exclude group: 'com.android.tools.external.lombok'
