@@ -19,6 +19,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 
+import java.io.File;
+import java.lang.reflect.Method;
+
+import de.dreier.mytargets.BuildConfig;
 import de.dreier.mytargets.R;
 import de.dreier.mytargets.base.activities.SimpleFragmentActivityBase;
 import de.dreier.mytargets.features.settings.SettingsManager;
@@ -47,4 +51,21 @@ public class MainActivity extends SimpleFragmentActivityBase {
         return new MainFragment();
     }
 
+    @Override
+    protected void onStop() {
+        super.onStop();
+
+        if (BuildConfig.DEBUG) {
+            try {
+                String covPath = android.os.Environment.getExternalStorageDirectory().getPath() + "/coverage.exec";
+                File coverageFile = new File(covPath);
+                Class<?> emmaRTClass = Class.forName("com.vladium.emma.rt.RT");
+                Method dumpCoverageMethod = emmaRTClass
+                        .getMethod("dumpCoverageData", coverageFile.getClass(), boolean.class, boolean.class);
+                dumpCoverageMethod.invoke(null, coverageFile, true, false);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
 }
