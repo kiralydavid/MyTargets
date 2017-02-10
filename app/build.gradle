@@ -19,7 +19,6 @@ apply plugin: 'com.android.application'
 apply plugin: 'me.tatarka.retrolambda'
 apply plugin: 'com.github.triplet.play'
 apply plugin: 'com.getkeepsafe.dexcount'
-apply plugin: 'com.google.firebase.firebase-crash'
 
 android {
     compileOptions {
@@ -135,9 +134,6 @@ dependencies {
 
     compile "com.google.android.gms:play-services-wearable:$libraryVersion.playService"
     compile "com.google.android.gms:play-services-drive:$libraryVersion.playService"
-
-    compile "com.google.firebase:firebase-core:$libraryVersion.firebase"
-    compile "com.google.firebase:firebase-crash:$libraryVersion.firebase"
 
     compile "com.google.code.gson:gson:$libraryVersion.gson"
 
